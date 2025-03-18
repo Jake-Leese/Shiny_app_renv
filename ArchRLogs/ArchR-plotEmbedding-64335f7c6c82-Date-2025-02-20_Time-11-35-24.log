@@ -1,0 +1,374 @@
+
+           ___      .______        ______  __    __  .______      
+          /   \     |   _  \      /      ||  |  |  | |   _  \     
+         /  ^  \    |  |_)  |    |  ,----'|  |__|  | |  |_)  |    
+        /  /_\  \   |      /     |  |     |   __   | |      /     
+       /  _____  \  |  |\  \\___ |  `----.|  |  |  | |  |\  \\___.
+      /__/     \__\ | _| `._____| \______||__|  |__| | _| `._____|
+    
+Logging With ArchR!
+
+Start Time : 2025-02-20 11:35:24
+
+------- ArchR Info
+
+ArchRThreads = 2
+
+------- System Info
+
+Computer OS = unix
+Total Cores = 4
+
+------- Session Info
+
+R version 4.1.2 (2021-11-01)
+Platform: x86_64-pc-linux-gnu (64-bit)
+Running under: Ubuntu 20.04.5 LTS
+
+Matrix products: default
+BLAS:   /usr/lib/x86_64-linux-gnu/openblas-pthread/libblas.so.3
+LAPACK: /usr/lib/x86_64-linux-gnu/openblas-pthread/liblapack.so.3
+
+Random number generation:
+ RNG:     L'Ecuyer-CMRG 
+ Normal:  Inversion 
+ Sample:  Rejection 
+ 
+locale:
+ [1] LC_CTYPE=C.UTF-8       LC_NUMERIC=C           LC_TIME=C.UTF-8       
+ [4] LC_COLLATE=C.UTF-8     LC_MONETARY=C.UTF-8    LC_MESSAGES=C.UTF-8   
+ [7] LC_PAPER=C.UTF-8       LC_NAME=C              LC_ADDRESS=C          
+[10] LC_TELEPHONE=C         LC_MEASUREMENT=C.UTF-8 LC_IDENTIFICATION=C   
+
+attached base packages:
+ [1] parallel  stats4    grid      stats     graphics  grDevices datasets 
+ [8] utils     methods   base     
+
+other attached packages:
+ [1] rhdf5_2.38.1                SummarizedExperiment_1.24.0
+ [3] Biobase_2.54.0              RcppArmadillo_14.2.2-1     
+ [5] Rcpp_1.0.14                 Matrix_1.5-4               
+ [7] GenomicRanges_1.46.1        GenomeInfoDb_1.30.1        
+ [9] IRanges_2.28.0              S4Vectors_0.32.4           
+[11] BiocGenerics_0.40.0         sparseMatrixStats_1.6.0    
+[13] MatrixGenerics_1.6.0        matrixStats_1.5.0          
+[15] data.table_1.16.4           stringr_1.5.1              
+[17] plyr_1.8.9                  magrittr_2.0.3             
+[19] ggplot2_3.5.1               gtable_0.3.6               
+[21] gtools_3.9.5                gridExtra_2.3              
+[23] devtools_2.4.5              usethis_3.1.0              
+[25] ArchR_1.0.3                
+
+loaded via a namespace (and not attached):
+ [1] lattice_0.20-45        digest_0.6.37          mime_0.12             
+ [4] R6_2.5.1               pillar_1.10.1          zlibbioc_1.40.0       
+ [7] rlang_1.1.5            miniUI_0.1.1.1         urlchecker_1.0.1      
+[10] labeling_0.4.3         htmlwidgets_1.6.4      RCurl_1.98-1.16       
+[13] munsell_0.5.1          DelayedArray_0.20.0    shiny_1.7.5           
+[16] compiler_4.1.2         httpuv_1.6.15          pkgconfig_2.0.3       
+[19] pkgbuild_1.4.6         htmltools_0.5.8.1      tidyselect_1.2.1      
+[22] tibble_3.2.1           GenomeInfoDbData_1.2.7 dplyr_1.1.4           
+[25] withr_3.0.2            later_1.4.1            rhdf5filters_1.6.0    
+[28] bitops_1.0-9           xtable_1.8-4           lifecycle_1.0.4       
+[31] scales_1.3.0           cli_3.6.3              stringi_1.8.4         
+[34] cachem_1.1.0           farver_2.1.2           XVector_0.34.0        
+[37] renv_1.1.0             fs_1.6.5               promises_1.3.2        
+[40] remotes_2.5.0          ellipsis_0.3.2         generics_0.1.3        
+[43] vctrs_0.6.5            Rhdf5lib_1.16.0        Cairo_1.6-2           
+[46] tools_4.1.2            glue_1.8.0             purrr_1.0.2           
+[49] pkgload_1.4.0          fastmap_1.2.0          colorspace_2.1-1      
+[52] BiocManager_1.30.25    sessioninfo_1.2.2      memoise_2.0.1         
+[55] profvis_0.4.0         
+
+
+------- Log Info
+
+
+2025-02-20 11:35:24 : Input-Parameters, Class = list
+
+Input-Parameters$ArchRProj: length = 1
+
+Input-Parameters$embedding: length = 1
+[1] "UMAP"
+
+
+Input-Parameters$colorBy: length = 1
+[1] "GeneIntegrationMatrix"
+
+
+Input-Parameters$name: length = 1
+[1] "FOXK2"
+
+
+Input-Parameters$log2Norm: length = 0
+NULL
+
+
+Input-Parameters$imputeWeights: length = 0
+NULL
+
+
+Input-Parameters$pal: length = 0
+NULL
+
+
+Input-Parameters$size: length = 1
+[1] 1.8
+
+
+Input-Parameters$sampleCells: length = 0
+NULL
+
+
+Input-Parameters$highlightCells: length = 0
+NULL
+
+
+Input-Parameters$rastr: length = 1
+[1] TRUE
+
+
+Input-Parameters$quantCut: length = 2
+[1] 0.01 0.99
+
+
+Input-Parameters$discreteSet: length = 0
+NULL
+
+
+Input-Parameters$continuousSet: length = 1
+[1] "solarExtra"
+
+
+Input-Parameters$randomize: length = 1
+[1] TRUE
+
+
+Input-Parameters$keepAxis: length = 1
+[1] FALSE
+
+
+Input-Parameters$baseSize: length = 1
+[1] 20
+
+
+Input-Parameters$plotAs: length = 1
+[1] "points"
+
+
+Input-Parameters$threads: length = 1
+[1] 2
+
+
+Input-Parameters$logFile: length = 1
+[1] "ArchRLogs/ArchR-plotEmbedding-64335f7c6c82-Date-2025-02-20_Time-11-35-24.log"
+
+
+Input-Parameters$...: length = 3
+
+
+2025-02-20 11:35:24 : Getting UMAP Embedding
+
+2025-02-20 11:35:24 : Embedding data.frame, Class = data.frame
+Embedding data.frame: nRows = 11532, nCols = 2
+                              IterativeLSI#UMAP_Dimension_1
+sample-ss4#CTCGCTAGTGCCCAGT-1                    -0.7936119
+sample-ss4#CCCTCTCGTATGTTCG-1                     1.0340915
+sample-ss4#ACTAACGAGGGACGTT-1                    -1.2866797
+sample-ss4#TCAGTCCTCCGATGCG-1                    -2.0812535
+sample-ss4#CCTGCTAAGCGCGTTC-1                    -1.0013813
+sample-ss4#CACATGATCGCTTGAA-1                    -1.6059136
+                              IterativeLSI#UMAP_Dimension_2
+sample-ss4#CTCGCTAGTGCCCAGT-1                      5.399292
+sample-ss4#CCCTCTCGTATGTTCG-1                     -1.106981
+sample-ss4#ACTAACGAGGGACGTT-1                      5.109081
+sample-ss4#TCAGTCCTCCGATGCG-1                     -1.954696
+sample-ss4#CCTGCTAAGCGCGTTC-1                     -1.064059
+sample-ss4#CACATGATCGCTTGAA-1                     -1.566432
+
+
+
+2025-02-20 11:35:25 : ColorBy = GeneIntegrationMatrix
+
+2025-02-20 11:35:25 : Getting Matrix Values...
+
+2025-02-20 11:35:25 : FeatureDF, Class = DFrame
+DataFrame with 10490 rows and 6 columns
+      seqnames     start       end    strand        name       idx
+         <Rle> <integer> <integer> <integer> <character> <integer>
+1         chr1     71633     68200         2       DHRS4         1
+2         chr1     75379     90530         1     CARMIL3         2
+3         chr1    216908    303711         1     CLC2DL3         3
+4         chr1    323123    357594         1      GOLGB1         4
+5         chr1    359020    371025         1       HCLS1         5
+...        ...       ...       ...       ...         ...       ...
+10486     chr9  24036053  24042090         1     TM4SF18       324
+10487     chr9  24039075  24062914         1          CP       325
+10488     chr9  24083265  24057105         2        HPS3       326
+10489     chr9  24091634  24085087         2      TUBA3E       327
+10490     chr9  24111128  24095782         2        GYG1       328
+
+
+2025-02-20 11:35:25 : idx, Class = integer
+
+idx: length = 1
+[1] 3413
+
+
+
+2025-02-20 11:35:25 : FeatureDF-Subset, Class = DFrame
+DataFrame with 1 row and 6 columns
+  seqnames     start       end    strand        name       idx
+     <Rle> <integer> <integer> <integer> <character> <integer>
+1    chr18   3469313   3464404         2       FOXK2        31
+
+
+2025-02-20 11:35:28 : Feature-Matrix, Class = dgCMatrix
+Feature-Matrix: nRows = 1, nCols = 11532
+Feature-Matrix: NonZeroEntries = 11532, EntryRange = [ 0.0256644617406931 , 0.692769496011768 ]
+1 x 5 sparse Matrix of class "dgCMatrix"
+     sample-ss4#CTCGCTAGTGCCCAGT-1 sample-ss4#CCCTCTCGTATGTTCG-1
+[1,]                     0.1729294                     0.1558223
+     sample-ss4#ACTAACGAGGGACGTT-1 sample-ss4#TCAGTCCTCCGATGCG-1
+[1,]                    0.09512604                     0.1152161
+     sample-ss4#CCTGCTAAGCGCGTTC-1
+[1,]                     0.1596519
+
+
+
+2025-02-20 11:35:28 : colorMat-Before-Impute, Class = matrix
+ 
+2025-02-20 11:35:28 : colorMat-Before-Impute, Class = array
+      sample-ss4#CTCGCTAGTGCCCAGT-1 sample-ss4#CCCTCTCGTATGTTCG-1
+FOXK2                     0.1729294                     0.1558223
+      sample-ss4#ACTAACGAGGGACGTT-1 sample-ss4#TCAGTCCTCCGATGCG-1
+FOXK2                    0.09512604                     0.1152161
+      sample-ss4#CCTGCTAAGCGCGTTC-1
+FOXK2                     0.1596519
+
+colorMat-Before-Impute: nRows = 1, nCols = 11532
+
+
+2025-02-20 11:35:28 : colorMat-After-Impute, Class = matrix
+ 
+2025-02-20 11:35:28 : colorMat-After-Impute, Class = array
+      sample-ss4#CTCGCTAGTGCCCAGT-1 sample-ss4#CCCTCTCGTATGTTCG-1
+FOXK2                     0.1729294                     0.1558223
+      sample-ss4#ACTAACGAGGGACGTT-1 sample-ss4#TCAGTCCTCCGATGCG-1
+FOXK2                    0.09512604                     0.1152161
+      sample-ss4#CCTGCTAAGCGCGTTC-1
+FOXK2                     0.1596519
+
+colorMat-After-Impute: nRows = 1, nCols = 11532
+
+
+2025-02-20 11:35:28 : ColorParams 1, Class = list
+
+ColorParams 1$color: length = 11532
+sample-ss4#CTCGCTAGTGCCCAGT-1 sample-ss4#CCCTCTCGTATGTTCG-1 
+                   0.17292937                    0.15582227 
+sample-ss4#ACTAACGAGGGACGTT-1 sample-ss4#TCAGTCCTCCGATGCG-1 
+                   0.09512604                    0.11521606 
+sample-ss4#CCTGCTAAGCGCGTTC-1 sample-ss4#CACATGATCGCTTGAA-1 
+                   0.15965195                    0.08950515 
+
+
+ColorParams 1$discrete: length = 1
+[1] FALSE
+
+
+ColorParams 1$title: length = 1
+[1] "UMAP of IterativeLSI colored by\nGeneIntegrationMatrix : FOXK2"
+
+
+ColorParams 1$continuousSet: length = 1
+[1] "solarExtra"
+
+
+
+2025-02-20 11:35:28 : PlotParams-1, Class = list
+
+PlotParams-1$color: length = 11532
+sample-ss4#CTCGCTAGTGCCCAGT-1 sample-ss4#CCCTCTCGTATGTTCG-1 
+                   0.17292937                    0.15582227 
+sample-ss4#ACTAACGAGGGACGTT-1 sample-ss4#TCAGTCCTCCGATGCG-1 
+                   0.09512604                    0.11521606 
+sample-ss4#CCTGCTAAGCGCGTTC-1 sample-ss4#CACATGATCGCTTGAA-1 
+                   0.15965195                    0.08950515 
+
+
+PlotParams-1$discrete: length = 1
+[1] FALSE
+
+
+PlotParams-1$title: length = 1
+[1] "UMAP of IterativeLSI colored by\nGeneIntegrationMatrix : FOXK2"
+
+
+PlotParams-1$continuousSet: length = 1
+[1] "solarExtra"
+
+
+PlotParams-1$labelSize: length = 1
+[1] 10
+
+
+PlotParams-1$labelAsFactors: length = 1
+[1] FALSE
+
+
+PlotParams-1$legendSize: length = 1
+[1] 20
+
+
+PlotParams-1$x: length = 11532
+[1] -0.7936119  1.0340915 -1.2866797 -2.0812535 -1.0013813 -1.6059136
+
+
+PlotParams-1$y: length = 11532
+[1]  5.399292 -1.106981  5.109081 -1.954696 -1.064059 -1.566432
+
+
+PlotParams-1$baseSize: length = 1
+[1] 20
+
+
+PlotParams-1$xlabel: length = 1
+[1] "UMAP Dimension 1"
+
+
+PlotParams-1$ylabel: length = 1
+[1] "UMAP Dimension 2"
+
+
+PlotParams-1$rastr: length = 1
+[1] TRUE
+
+
+PlotParams-1$size: length = 1
+[1] 1.8
+
+
+PlotParams-1$randomize: length = 1
+[1] TRUE
+
+
+PlotParams-1$pal: length = 256
+[1] "#3361A5" "#3262A7" "#3263A9" "#3164AC" "#3166AE" "#3067B1"
+
+
+PlotParams-1$colorTitle: length = 1
+[1] "NormCounts"
+
+
+
+------- Completed
+
+End Time : 2025-02-20 11:35:28
+Elapsed Time Minutes = 0.0689074158668518
+Elapsed Time Hours = 0.00114850256178114
+
+-------
+
+
+

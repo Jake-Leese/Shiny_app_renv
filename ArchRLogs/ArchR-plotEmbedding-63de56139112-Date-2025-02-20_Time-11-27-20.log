@@ -1,0 +1,236 @@
+
+           ___      .______        ______  __    __  .______      
+          /   \     |   _  \      /      ||  |  |  | |   _  \     
+         /  ^  \    |  |_)  |    |  ,----'|  |__|  | |  |_)  |    
+        /  /_\  \   |      /     |  |     |   __   | |      /     
+       /  _____  \  |  |\  \\___ |  `----.|  |  |  | |  |\  \\___.
+      /__/     \__\ | _| `._____| \______||__|  |__| | _| `._____|
+    
+Logging With ArchR!
+
+Start Time : 2025-02-20 11:27:20
+
+------- ArchR Info
+
+ArchRThreads = 2
+
+------- System Info
+
+Computer OS = unix
+
+------- Session Info
+
+R version 4.1.2 (2021-11-01)
+Platform: x86_64-pc-linux-gnu (64-bit)
+Running under: Ubuntu 20.04.5 LTS
+
+Matrix products: default
+BLAS:   /usr/lib/x86_64-linux-gnu/openblas-pthread/libblas.so.3
+LAPACK: /usr/lib/x86_64-linux-gnu/openblas-pthread/liblapack.so.3
+
+Random number generation:
+ RNG:     L'Ecuyer-CMRG 
+ Normal:  Inversion 
+ Sample:  Rejection 
+ 
+locale:
+ [1] LC_CTYPE=C.UTF-8       LC_NUMERIC=C           LC_TIME=C.UTF-8       
+ [4] LC_COLLATE=C.UTF-8     LC_MONETARY=C.UTF-8    LC_MESSAGES=C.UTF-8   
+ [7] LC_PAPER=C.UTF-8       LC_NAME=C              LC_ADDRESS=C          
+[10] LC_TELEPHONE=C         LC_MEASUREMENT=C.UTF-8 LC_IDENTIFICATION=C   
+
+attached base packages:
+[1] stats4    grid      stats     graphics  grDevices datasets  utils    
+[8] methods   base     
+
+other attached packages:
+ [1] rhdf5_2.38.1                SummarizedExperiment_1.24.0
+ [3] Biobase_2.54.0              RcppArmadillo_14.2.2-1     
+ [5] Rcpp_1.0.14                 Matrix_1.5-4               
+ [7] GenomicRanges_1.46.1        GenomeInfoDb_1.30.1        
+ [9] IRanges_2.28.0              S4Vectors_0.32.4           
+[11] BiocGenerics_0.40.0         sparseMatrixStats_1.6.0    
+[13] MatrixGenerics_1.6.0        matrixStats_1.5.0          
+[15] plyr_1.8.9                  magrittr_2.0.3             
+[17] gtable_0.3.6                gtools_3.9.5               
+[19] gridExtra_2.3               devtools_2.4.5             
+[21] usethis_3.1.0               ArchR_1.0.3                
+[23] scHelper_0.3.0              ComplexHeatmap_2.10.0      
+[25] patchwork_1.3.0             mgcv_1.9-1                 
+[27] nlme_3.1-167                viridis_0.6.5              
+[29] viridisLite_0.4.2           lubridate_1.9.4            
+[31] forcats_1.0.0               stringr_1.5.1              
+[33] dplyr_1.1.4                 purrr_1.0.2                
+[35] readr_2.1.5                 tidyr_1.3.1                
+[37] tibble_3.2.1                ggplot2_3.5.1              
+[39] tidyverse_2.0.0             data.table_1.16.4          
+[41] bs4Dash_2.3.0               shiny_1.7.5                
+
+loaded via a namespace (and not attached):
+ [1] bitops_1.0-9           fs_1.6.5               doParallel_1.0.17     
+ [4] RColorBrewer_1.1-3     profvis_0.4.0          tools_4.1.2           
+ [7] R6_2.5.1               colorspace_2.1-1       rhdf5filters_1.6.0    
+[10] GetoptLong_1.0.5       urlchecker_1.0.1       withr_3.0.2           
+[13] tidyselect_1.2.1       compiler_4.1.2         cli_3.6.3             
+[16] Cairo_1.6-2            DelayedArray_0.20.0    scales_1.3.0          
+[19] digest_0.6.37          XVector_0.34.0         pkgconfig_2.0.3       
+[22] htmltools_0.5.8.1      sessioninfo_1.2.2      fastmap_1.2.0         
+[25] htmlwidgets_1.6.4      rlang_1.1.5            GlobalOptions_0.1.2   
+[28] shape_1.4.6.1          farver_2.1.2           generics_0.1.3        
+[31] jsonlite_1.8.9         RCurl_1.98-1.16        GenomeInfoDbData_1.2.7
+[34] Rhdf5lib_1.16.0        munsell_0.5.1          lifecycle_1.0.4       
+[37] stringi_1.8.4          zlibbioc_1.40.0        pkgbuild_1.4.6        
+[40] parallel_4.1.2         promises_1.3.2         crayon_1.5.3          
+[43] miniUI_0.1.1.1         lattice_0.20-45        splines_4.1.2         
+[46] circlize_0.4.16        hms_1.1.3              pillar_1.10.1         
+[49] rjson_0.2.23           codetools_0.2-18       pkgload_1.4.0         
+[52] glue_1.8.0             remotes_2.5.0          renv_1.1.0            
+[55] BiocManager_1.30.25    png_0.1-8              vctrs_0.6.5           
+[58] tzdb_0.4.0             httpuv_1.6.15          foreach_1.5.2         
+[61] clue_0.3-66            cachem_1.1.0           mime_0.12             
+[64] xtable_1.8-4           later_1.4.1            iterators_1.0.14      
+[67] memoise_2.0.1          cluster_2.1.2          timechange_0.3.0      
+[70] ellipsis_0.3.2        
+
+
+------- Log Info
+
+
+2025-02-20 11:27:20 : Input-Parameters, Class = list
+
+Input-Parameters$ArchRProj: length = 1
+
+Input-Parameters$embedding: length = 1
+[1] "UMAP"
+
+
+Input-Parameters$colorBy: length = 1
+[1] "MotifMatrix"
+
+
+Input-Parameters$name: length = 1
+[1] "z:FOXK2"
+
+
+Input-Parameters$log2Norm: length = 0
+NULL
+
+
+Input-Parameters$imputeWeights: length = 0
+NULL
+
+
+Input-Parameters$pal: length = 0
+NULL
+
+
+Input-Parameters$size: length = 1
+[1] 1.8
+
+
+Input-Parameters$sampleCells: length = 0
+NULL
+
+
+Input-Parameters$highlightCells: length = 0
+NULL
+
+
+Input-Parameters$rastr: length = 1
+[1] TRUE
+
+
+Input-Parameters$quantCut: length = 2
+[1] 0.01 0.99
+
+
+Input-Parameters$discreteSet: length = 0
+NULL
+
+
+Input-Parameters$continuousSet: length = 1
+[1] "solarExtra"
+
+
+Input-Parameters$randomize: length = 1
+[1] TRUE
+
+
+Input-Parameters$keepAxis: length = 1
+[1] FALSE
+
+
+Input-Parameters$baseSize: length = 1
+[1] 20
+
+
+Input-Parameters$plotAs: length = 1
+[1] "points"
+
+
+Input-Parameters$threads: length = 1
+[1] 2
+
+
+Input-Parameters$logFile: length = 1
+[1] "ArchRLogs/ArchR-plotEmbedding-63de56139112-Date-2025-02-20_Time-11-27-20.log"
+
+
+Input-Parameters$...: length = 3
+
+
+2025-02-20 11:27:20 : Getting UMAP Embedding
+
+2025-02-20 11:27:20 : Embedding data.frame, Class = data.frame
+Embedding data.frame: nRows = 33465, nCols = 2
+                              IterativeLSI#UMAP_Dimension_1
+sample-HH6#GCCCGAACAAGCCAGA-1                          1.77
+sample-HH6#CAGTGCGAGAGTGGAA-1                         -3.38
+sample-HH6#GGAACTTAGCGAATAT-1                          0.50
+sample-HH6#TCAAGGTCATTCTTTG-1                         -3.03
+sample-HH6#CACTGAAAGCGAGAAA-1                          4.14
+sample-HH6#CTGGGACGTGTTGTTG-1                         -0.26
+                              IterativeLSI#UMAP_Dimension_2
+sample-HH6#GCCCGAACAAGCCAGA-1                          0.68
+sample-HH6#CAGTGCGAGAGTGGAA-1                          0.13
+sample-HH6#GGAACTTAGCGAATAT-1                         -1.90
+sample-HH6#TCAAGGTCATTCTTTG-1                         -2.25
+sample-HH6#CACTGAAAGCGAGAAA-1                         -0.87
+sample-HH6#CTGGGACGTGTTGTTG-1                          1.04
+
+
+
+2025-02-20 11:27:31 : ColorBy = MotifMatrix
+
+2025-02-20 11:27:31 : Getting Matrix Values...
+
+2025-02-20 11:27:31 : FeatureDF, Class = DFrame
+DataFrame with 1492 rows and 3 columns
+       seqnames       idx         name
+          <Rle> <integer>  <character>
+1    deviations         1         Arnt
+2    deviations         2    Ahr::Arnt
+3    deviations         3 Ddit3::Cebpa
+4    deviations         4        Mecom
+5    deviations         5        FOXF2
+...         ...       ...          ...
+1488          z       742         USF1
+1489          z       743         USF2
+1490          z       744          YY2
+1491          z       745       ZNF263
+1492          z       746         CREM
+
+
+2025-02-20 11:27:31 : idx, Class = integer
+
+idx: length = 1
+[1] 1433
+
+
+
+2025-02-20 11:27:31 : FeatureDF-Subset, Class = DFrame
+DataFrame with 1 row and 3 columns
+  seqnames       idx        name
+     <Rle> <integer> <character>
+1        z       687       FOXK2
+
