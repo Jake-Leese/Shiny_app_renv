@@ -2,7 +2,7 @@ Shiny app repository for exploring Chick Neural Plate Border scATAC-seq data. Al
 
 Global.R, ui.R and server.R contain the original script set up to work with ShinyServer
 
-Dynamic_Shiny_Script.R provides a workaround for launching the app with minimal compute resources (< 8GB mem) by dynamically loading and unloading each ArchR object as and when it is called by the application
+Dynamic_Shiny_Script.R provides a workaround for launching the app with minimal compute resources (8-20 GB mem) by dynamically loading and unloading each ArchR object as and when it is called by the application
 
 To set up Shiny Server:
 - After installing Shiny Server, clone the repo into "/srv/shiny-server/"
