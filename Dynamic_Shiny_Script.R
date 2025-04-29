@@ -59,8 +59,15 @@ archr_paths <- list(
 dynamicLoadArchR <- function(dataset) {
   if (!is.null(dataset) && dataset %in% names(archr_paths)) {
     ArchRProj <- loadArchRProject(path = archr_paths[[dataset]], showLogo = FALSE)
-    ArchRProj <- addImputeWeights(ArchRProj)
-    return(ArchRProj)
+    if (dataset == "Full Data") {
+      ArchRProj <- addCellColData(ArchRProj, data = ArchRProj$scHelper_cell_type, cells = rownames(getCellColData(ArchRProj)), name = "transferred_scHelper_cell_type")
+      ArchRProj <- addCellColData(ArchRProj, data = ArchRProj$scHelper_cell_type_broad, cells = rownames(getCellColData(ArchRProj)), name = "transferred_scHelper_cell_type_broad")
+      ArchRProj <- addImputeWeights(ArchRProj)
+      return(ArchRProj)
+    } else {
+      ArchRProj <- addImputeWeights(ArchRProj)
+      return(ArchRProj)
+    }
   }
   return(NULL)
 }
