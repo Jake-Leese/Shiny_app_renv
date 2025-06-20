@@ -82,12 +82,13 @@ ArchR_dimplot <- function(ArchR, name){
   
   # if plotting stage
   if(name == "stage"){
-    print(plotEmbedding(ArchR, name = name,
+    p <- plotEmbedding(ArchR, name = name,
                         plotAs = "points", size = 1.8, randomize = TRUE,
                         labelSize = 8, labelAsFactors = FALSE, baseSize = 20, legendSize = 20,
-                        pal = stage_colours) + 
-          theme_ArchR(legendTextSize = 17, baseSize = 17, plotMarginCm = 0.5) + 
-      guides(colour = guide_legend(override.aes = list(size=7))))
+                        pal = stage_colours) 
+    p <- p + theme_ArchR(legendTextSize = 17, baseSize = 17, plotMarginCm = 0.5) + 
+      guides(colour = guide_legend(override.aes = list(size=7)))
+    return(p)
   }
   
   # if plotting cell states
@@ -95,21 +96,23 @@ ArchR_dimplot <- function(ArchR, name){
     available_cell_types <- as.vector(unique(getCellColData(ArchR, select = name)[,1]))
     available_cell_types <- replace(available_cell_types, is.na(available_cell_types), "Unmapped")
     scHelper_cols <- scHelper_cell_type_colours[available_cell_types]
-    print(plotEmbedding(ArchR, name = name,
+    p <- plotEmbedding(ArchR, name = name,
                   plotAs = "points", size = 1.8, randomize = TRUE,
                   labelSize = 0, labelAsFactors = FALSE, baseSize = 0, legendSize = 20,
-                  pal = scHelper_cols) + 
-            theme_ArchR(legendTextSize = 17, baseSize = 17, plotMarginCm = 0.5) + 
-      guides(colour = guide_legend(override.aes = list(size=7))))
+                  pal = scHelper_cols) 
+    p <- p + theme_ArchR(legendTextSize = 17, baseSize = 17, plotMarginCm = 0.5) + 
+      guides(colour = guide_legend(override.aes = list(size=7)))
+    return(p)
   }
 
     # if plotting clusters
   if (name == "clusters"){
-    print(plotEmbedding(ArchR, name = name,
+    p <- plotEmbedding(ArchR, name = name,
                   plotAs = "points", size = 1.8, randomize = TRUE,
-                  labelSize = 6, labelAsFactors = FALSE, baseSize = 20, legendSize = 20) + 
-      theme_ArchR(legendTextSize = 17, baseSize = 17, plotMarginCm = 0.5) + 
-      guides(colour = guide_legend(override.aes = list(size=7))))
+                  labelSize = 6, labelAsFactors = FALSE, baseSize = 20, legendSize = 20)  
+    p <- p + theme_ArchR(legendTextSize = 17, baseSize = 17, plotMarginCm = 0.5) + 
+      guides(colour = guide_legend(override.aes = list(size=7)))
+    return(p)
   }
   
 }

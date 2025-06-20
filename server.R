@@ -5,7 +5,7 @@ server <- function(input, output, session){
   # Generate ArchR UMAP plots automatically when inputs change
   observeEvent(input$UMAP_subset_ArchR, {
     output$dimplot_ArchR <- renderPlot({
-      ArchR_dimplot(ArchR_list[[input$UMAP_subset_ArchR]], name = input$dimplot_ArchR_groupby) +
+      print(UMAP_Plots[[input$UMAP_subset_ArchR]][[input$dimplot_ArchR_groupby]]) +
         my_theme
     }, height = function() { session$clientData$output_dimplot_ArchR_width * 0.8 })
   })
@@ -30,4 +30,3 @@ server <- function(input, output, session){
   )
     
 }
-

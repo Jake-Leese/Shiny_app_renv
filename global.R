@@ -15,6 +15,9 @@ source('./custom_functions.R')
 options(scipen = 1)
 options(digits = 2)
 
+# prevent any attempt to load graphics within global.R set up
+pdf(NULL)
+
 ####################################################################
 ##################       Aesthetic params      #####################
 
@@ -49,12 +52,12 @@ my_theme <- theme(axis.text=element_text(size=14),
 ####################       ArchR objects      ##########################
 
 # load ArchR objects
-HH5_ArchR <- loadArchRProject(path = "/home/ubuntu/RDS/sc_atac_data_EH/processed_data/HH5/HH5_Save-ArchR/HH5_Save-ArchR", showLogo = FALSE)
-HH6_ArchR <- loadArchRProject(path = "/home/ubuntu/RDS/sc_atac_data_EH/processed_data/HH6/HH6_Save-ArchR/HH6_Save-ArchR", showLogo = FALSE)
-HH7_ArchR <- loadArchRProject(path = "/home/ubuntu/RDS/sc_atac_data_EH/processed_data/HH7/HH7_Save-ArchR/HH7_Save-ArchR", showLogo = FALSE)
-ss4_ArchR <- loadArchRProject(path = "/home/ubuntu/RDS/sc_atac_data_EH/processed_data/ss4/ss4_Save-ArchR/ss4_Save-ArchR", showLogo = FALSE)
-ss8_ArchR <- loadArchRProject(path = "/home/ubuntu/RDS/sc_atac_data_EH/processed_data/ss8/ss8_Save-ArchR/ss8_Save-ArchR", showLogo = FALSE)
-FullData_ArchR <- loadArchRProject(path = "/home/ubuntu/RDS/sc_atac_data_EH/processed_data/FullData/FullData_Save-ArchR/FullData_Save-ArchR", showLogo = FALSE)
+HH5_ArchR <- loadArchRProject(path = "/home/ubuntu/RDS/sc_atac_data_EH/processed_data/Shiny_ArchR_data/scATAC_processed_files_ArchR/HH5_Save_ArchR_optimised", showLogo = FALSE)
+HH6_ArchR <- loadArchRProject(path = "/home/ubuntu/RDS/sc_atac_data_EH/processed_data/Shiny_ArchR_data/scATAC_processed_files_ArchR/HH6_Save_ArchR_optimised", showLogo = FALSE)
+HH7_ArchR <- loadArchRProject(path = "/home/ubuntu/RDS/sc_atac_data_EH/processed_data/Shiny_ArchR_data/scATAC_processed_files_ArchR/HH7_Save_ArchR_optimised", showLogo = FALSE)
+ss4_ArchR <- loadArchRProject(path = "/home/ubuntu/RDS/sc_atac_data_EH/processed_data/Shiny_ArchR_data/scATAC_processed_files_ArchR/ss4_Save_ArchR_optimised", showLogo = FALSE)
+ss8_ArchR <- loadArchRProject(path = "/home/ubuntu/RDS/sc_atac_data_EH/processed_data/Shiny_ArchR_data/scATAC_processed_files_ArchR/ss8_Save_ArchR_optimised", showLogo = FALSE)
+FullData_ArchR <- loadArchRProject(path = "/home/ubuntu/RDS/sc_atac_data_EH/processed_data/Shiny_ArchR_data/scATAC_processed_files_ArchR/FullData_Save_ArchR_optimised", showLogo = FALSE)
 
 # make the schelper cell type metadata of the fulldata named like the stages
 FullData_ArchR <- addCellColData(FullData_ArchR, data = FullData_ArchR$scHelper_cell_type, cells = rownames(getCellColData(FullData_ArchR)), name = "transferred_scHelper_cell_type")
@@ -97,3 +100,15 @@ int_genes <- getFeatures(ss8_ArchR, useMatrix = "GeneIntegrationMatrix")
 matches <- sapply(TF_options_1, function(x) any(grepl(x, int_genes)))
 TF_options <- sort(TF_options_1[matches]) # 346
 
+# Pre-loading UMAPs
+# Initialize nested list
+UMAP_Plots <- list()
+
+# Loop through ArchR objects and generate plots
+for (sample_name in names(ArchR_list)) {
+  plots <- list()
+  for (group in ArchR_groupby_options) {
+    plots[[group]] <- ArchR_dimplot(ArchR_list[[sample_name]], group)
+  }
+  UMAP_Plots[[sample_name]] <- plots
+}
