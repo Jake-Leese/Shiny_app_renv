@@ -1,7 +1,8 @@
 renv repository for Shiny app.
 
-global.R, server.R, ui.R and custom_functions.R are sufficient for shiny server to run the application
-Dynamic_Shiny_Script.R and Dynamic_Shiny_optimised.R offer less resource intense options for running the app, in that they dynamically unload and load ArchR objects as they are called by the shiny dashboard.
+global.R, server.R, ui.R and custom_functions.R are sufficient for shiny server to run the application.
+
+Dynamic_Shiny_Script.R and Dynamic_Shiny_optimised.R offer less resource intensive options for running the app with limited computational resources. In order to minimise memory usage, these scripts dynamically unload and load ArchR objects as they are called by the shiny dashboard.
 
 To set up Shiny server:
 - Ensure R is installed along with Shiny and renv
